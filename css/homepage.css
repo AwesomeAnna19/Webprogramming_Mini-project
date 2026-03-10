@@ -1,0 +1,22 @@
+h1 {
+    color: rgb(186, 132, 230); 
+    font-size: 1.5cm; 
+    text-align: left;
+}
+
+p {
+    color: rgb(199, 146, 243); 
+    font-size: 0.5cm; 
+    text-align: left;
+}
+
+p.introText {
+    color: rgb(199, 146, 243); 
+    font-size: 0.5cm; 
+    text-align: left; 
+    font-weight: bold;
+}
+
+body {
+    background-color: rgb(247, 238, 255);
+}
