@@ -1,4 +1,6 @@
 /* This here is for the tabs, from this video here: https://youtu.be/5L6h_MrNvsk?si=-IscZ1Q4G3Sr1wjp */
+/* This here is also for the sidebar, from this video here: https://youtu.be/6O15034hNyo */
+
 [data-tab-content] {
     display: none;
 }
@@ -12,14 +14,66 @@ body {
     margin: 0;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    background-color: rgb(247, 238, 255);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(222, 181, 255);
+    height: 100%;
+    min-height: 900px;
+    position: fixed;
+    border: 1px solid rgb(199, 146, 243);
+    left: -300px;
+    transition: left 0.5s;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar.active + .tab-content {
+    width: calc(100% - 300px);
+    margin-left: 320px;
+}
+
+#openCloseButton {
+    display: block;
+    width: 25px;
+    height: 35px;
+    position: fixed;
+    left: 20px;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    color: rgb(199, 146, 243);
+    font-size: 2rem;
+    z-index: 20;
+    cursor: pointer;
+    transition: left 0.5s, transform 0.5s;
+}
+
+.sidebar.active #openCloseButton {
+    left: 275px;
+    transform: rotate(405deg);
+}
+
 .tabs {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     list-style-type: none;
     font-size: 25px;
     margin: 0;
     padding: 0;
-    border: 1px solid rgb(199, 146, 243);
 }
 
 .tab {
@@ -36,6 +90,11 @@ body {
 }
 
 .tab-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: 20px;
+    transition: width 0.5s, margin 0.5s;
 }

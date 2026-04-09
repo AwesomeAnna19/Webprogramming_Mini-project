@@ -1,4 +1,5 @@
 // I watched this video to know how to make tabs: https://youtu.be/5L6h_MrNvsk?si=-IscZ1Q4G3Sr1wjp
+
 const tabs = document.querySelectorAll('[data-tab-target]');
 const tabContents = document.querySelectorAll('[data-tab-content]');
 
