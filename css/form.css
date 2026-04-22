@@ -1,0 +1,9 @@
+/* I watched this video to know how to make forms for sign in and login: https://www.youtube.com/watch?v=LiomRvK7AM8 */
+
+.form-box {
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
