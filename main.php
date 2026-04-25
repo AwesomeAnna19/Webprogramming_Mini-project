@@ -35,6 +35,8 @@ function isActiveForm($forName, $activeForm) {
 
 ?>
 
+
+
 <!-- Here is the HTML code for the whole website -->
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +49,7 @@ function isActiveForm($forName, $activeForm) {
     <script src="js/sidebar.js" defer></script>
     <script src="js/images.js" defer></script>
     <script src="js/form.js" defer></script>
+    <script src="js/shopping-cart.js" defer></script>
     
     <title>Sista's Website</title>
     <link rel="stylesheet" href="css/main.css">
@@ -54,6 +57,7 @@ function isActiveForm($forName, $activeForm) {
     <link rel="stylesheet" href="css/images.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/shopping-cart.css">
 </header>
 <body>
     <div class="wrapper">
@@ -160,41 +164,6 @@ function isActiveForm($forName, $activeForm) {
                                 </a>
                             </li>
 
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="image placeholders/stars.jpg" alt="Stars" class="card-image">
-                                    
-                                    <p class="badge">Crochet</p>
-                                    
-                                    <h2 class="card-title">Stars</h2>
-
-                                    <p class="image-text">These here are Stars! :D</p>
-                                </a>
-                            </li>
-
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="image placeholders/collage.jpg" alt="Collage" class="card-image">
-                                    
-                                    <p class="badge">Knitting</p>
-                                    
-                                    <h2 class="card-title">Collage</h2>
-
-                                    <p class="image-text">This here is a Collage! :D</p>
-                                </a>
-                            </li>
-
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="image placeholders/ducks.jpg" alt="Ducks" class="card-image">
-                                    
-                                    <p class="badge">Knitting</p>
-                                    
-                                    <h2 class="card-title">Ducks</h2>
-
-                                    <p class="image-text">These here are Ducks! :D</p>
-                                </a>
-                            </li>
                         </ul>
 
                         <div class="swiper-pagination"></div>
@@ -207,6 +176,81 @@ function isActiveForm($forName, $activeForm) {
             <div id="shop" data-tab-content class="<?= isActive($activeTab, '#shop') ?>">
                 <h2>Shop</h2>
                 <p>Check out my shop for some beautiful handmade items!</p>
+
+                <div class="shop-layout">
+
+                    <div class="shop-items">
+                        <div class="container swiper">
+                            <div class="card-wrapper">
+                                <ul class="card-list swiper-wrapper">
+                                    <li class="card-item swiper-slide">
+                                        <a href="#" class="card-link">
+                                            <img src="images/lily-sweater.jpg" alt="Lily Sweater" class="card-image">
+                                            
+                                            <p class="badge">Knitting</p>
+                                            
+                                            <h2 class="card-title">Lily Sweater</h2>
+
+                                            <p class="image-text">The cutest sweater for all seasons 💖</p>
+
+                                            <p>45.00 DKK <button class="add-to-cart-button" data-name="Lily Sweater" data-price="45">Add to Cart</button></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="card-item swiper-slide">
+                                        <a href="#" class="card-link">
+                                            <img src="images/babyclava (1).jpg" alt="Babyclava" class="card-image">
+                                            
+                                            <p class="badge">Knitting</p>
+                                            
+                                            <h2 class="card-title">Babyclava</h2>
+
+                                            <p class="image-text">Baby balaclava for all small aged people!</p>
+
+                                            <p>25.00 DKK <button class="add-to-cart-button" data-name="Babyclava" data-price="25">Add to Cart</button></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="card-item swiper-slide">
+                                        <a href="#" class="card-link">
+                                            <img src="images/indiana-poncho.jpg" alt="Indiana Poncho" class="card-image">
+                                            
+                                            <p class="badge">Knitting</p>
+                                            
+                                            <h2 class="card-title">Indiana Poncho</h2>
+
+                                            <p class="image-text">Indiana Jolie’s poncho for life 🤠</p>
+
+                                            <p>75.00 DKK <button class="add-to-cart-button" data-name="Indiana Poncho" data-price="75">Add to Cart</button></p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                                <div class="swiper-pagination"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <aside class="shopping-cart">
+                        <img src="images\shopping-cart-svgrepo-com.svg" alt="Shopping Cart Icon" class="shopping-cart-button">
+                        <h2>Your Shopping List</h2>
+
+                        <div id="shopping-cart-items">
+                            <p class="empty-list-message">Its empty in here...</p>
+                        </div>
+
+                        <div class="shopping-cart-total">
+                            <hr>
+                            <p>Total of items: <span id="header-count">0</span></p>
+                            <p>Total: <span id="total-currency">0.00</span> DKK</p>
+                            <button class="checkout-button">Ready for checkout?</button>
+                        </div>
+                    </aside>
+                    
+                </div>
             </div>
 
             <div id="aboutMe" data-tab-content class="<?= isActive($activeTab, '#aboutMe') ?>">
