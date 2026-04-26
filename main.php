@@ -256,6 +256,16 @@ function isActiveForm($forName, $activeForm) {
             <div id="aboutMe" data-tab-content class="<?= isActive($activeTab, '#aboutMe') ?>">
                 <h2>About Me</h2>
                 <p>Learn more about me as a person and why I wanted this website.</p>
+
+                <p>
+                    I’ve always had a creative mind and felt restless with my hands. 
+                    In 2022 I started crocheting as I felt inspired by the snood from the Netflix series Wednesday. 
+                    The snood then became my first project and since I’ve just been practising and making all kinds of stuff. 
+                    Last year, 2025, I then began my knitting journey. 
+                    I wanted to make sweaters with greater patterns and try to make sense with two needles at the same time - and I succeeded! 
+                    Now I’m having a blast making things for both myself and others, and exploring and experimenting with lots of different techniques. 
+                    My “why” behind every piece is just coming from my enjoyment of making something myself and the process in doing that. ❤️
+                </p>
             </div>
 
             <php>
