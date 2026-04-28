@@ -12,12 +12,16 @@ if (isset($_POST['signIn'])) {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $checkEmail = $conn->query("SELECT email FROM users WHERE email = '$email'");
+
     if ($checkEmail->num_rows > 0) {
         $_SESSION['signIn_error'] = 'This email has already been used.';
+        $_SESSION['active_tab'] = '#signIn-login';
         $_SESSION['active_form'] = 'signIn';
+        header("Location: main.php");
+        exit();
     } else {
         $conn->query("INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
-        $_SESSION['signIn_successMessage'] = "You have successfully created an account. Welcome $name!";
+        $_SESSION['signIn_successMessage'] = "You have successfully created an account. Log in to see your profile!";
         $_SESSION['active_tab'] = '#signIn-login';
         $_SESSION['active_form'] = 'signIn';
         header("Location: main.php");
@@ -32,6 +36,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
+
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {

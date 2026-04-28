@@ -58,6 +58,8 @@ function isActiveForm($forName, $activeForm) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/shopping-cart.css">
+    <link rel="stylesheet" href="css/about-me.css">
+    <link rel="stylesheet" href="css/projects.css">
 </header>
 <body>
     <div class="wrapper">
@@ -69,11 +71,12 @@ function isActiveForm($forName, $activeForm) {
             <h1>Sista's Website</h1>
 
             <ul class="tabs">
-                <li data-tab-target="#home" class="active tab <?= isActive($activeTab, '#home') ?>">Home</li>
-                <li data-tab-target="#projects" class="tab <?= isActive($activeTab, '#projects') ?>">Projects</li>
+                <li data-tab-target="#home" class="tab <?= isActive($activeTab, '#home') ?>">Home</li>
                 <li data-tab-target="#shop" class="tab <?= isActive($activeTab, '#shop') ?>">Shop</li>
                 <li data-tab-target="#aboutMe" class="tab <?= isActive($activeTab, '#aboutMe') ?>">About Me</li>
-                <li data-tab-target="#signIn-login" class="tab <?= isActive($activeTab, '#signIn-login') ?>">Sign In</li>
+                <li data-tab-target="#signIn-login" class="tab <?= isActive($activeTab, '#signIn-login') ?>">
+                    <?= isset($_SESSION['email']) ? 'Profile' : 'Sign In/Login' ?>
+                </li>
             </ul>
         </div>
         
@@ -82,95 +85,96 @@ function isActiveForm($forName, $activeForm) {
                 <h2>Home</h2>
                 <p class="introText">Welcome to my website!</p>
                 <p>Here you can find inspiration from my crocheted and knitted projects. 
-                    You can also buy some samples of my projects under the "Shop" tab above. Feel free to explore!</p>
-            </div>
+                    You can also buy some samples of my projects in the "Shop" tab to the left. Feel free to explore!</p>
+                
+                <div class="projectsPage">
+                    <h2>My Projects</h2>
+                    <p>Here you can see some of my latest crocheted and knitted projects.</p>
 
-            <div id="projects" data-tab-content class="<?= isActive($activeTab, '#projects') ?>">
-                <h2>My Projects</h2>
-                <p>Here you can see some of my latest crocheted and knitted projects.</p>
+                    <div class="container swiper">
+                        <div class="card-wrapper">
+                            <ul class="card-list swiper-wrapper">
+                                <li class="card-item swiper-slide">
+                                    <a href="#" class="card-link">
+                                        <img src="images/lily-sweater.jpg" alt="Lily Sweater" class="card-image">
+                                        
+                                        <p class="badge">Knitting</p>
+                                        
+                                        <h2 class="card-title">Lily Sweater</h2>
 
-                <div class="container swiper">
-                    <div class="card-wrapper">
-                        <ul class="card-list swiper-wrapper">
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="images/lily-sweater.jpg" alt="Lily Sweater" class="card-image">
-                                    
-                                    <p class="badge">Knitting</p>
-                                    
-                                    <h2 class="card-title">Lily Sweater</h2>
+                                        <p class="image-text">The cutest sweater for all seasons 💖</p>
+                                    </a>
+                                </li>
 
-                                    <p class="image-text">The cutest sweater for all seasons 💖</p>
-                                </a>
-                            </li>
+                                <li class="card-item swiper-slide">
+                                    <a href="#" class="card-link">
+                                        <img src="images/diamond-sweater (1).jpg" alt="Diamond Sweater" class="card-image">
+                                        
+                                        <p class="badge">Crochet</p>
+                                        
+                                        <h2 class="card-title">Diamond Sweater</h2>
 
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="images/diamond-sweater (1).jpg" alt="Diamond Sweater" class="card-image">
-                                    
-                                    <p class="badge">Crochet</p>
-                                    
-                                    <h2 class="card-title">Diamond Sweater</h2>
+                                        <p class="image-text">The warmest and chunky yet cutest winter sweater 🩵</p>
+                                    </a>
+                                </li>
 
-                                    <p class="image-text">The warmest and chunky yet cutest winter sweater 🩵</p>
-                                </a>
-                            </li>
+                                <li class="card-item swiper-slide">
+                                    <a href="#" class="card-link">
+                                        <img src="images/babyclava (1).jpg" alt="Babyclava" class="card-image">
+                                        
+                                        <p class="badge">Knitting</p>
+                                        
+                                        <h2 class="card-title">Babyclava</h2>
 
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="images/babyclava (1).jpg" alt="Babyclava" class="card-image">
-                                    
-                                    <p class="badge">Knitting</p>
-                                    
-                                    <h2 class="card-title">Babyclava</h2>
+                                        <p class="image-text">Baby balaclava for all small aged people!</p>
+                                    </a>
+                                </li>
 
-                                    <p class="image-text">Baby balaclava for all small aged people!</p>
-                                </a>
-                            </li>
+                                <li class="card-item swiper-slide">
+                                    <a href="#" class="card-link">
+                                        <img src="images/knitted-belt (1).jpg" alt="Knitted Belt" class="card-image">
+                                        
+                                        <p class="badge">Crochet</p>
+                                        
+                                        <h2 class="card-title">Knitted Belt</h2>
 
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="images/knitted-belt (1).jpg" alt="Knitted Belt" class="card-image">
-                                    
-                                    <p class="badge">Crochet</p>
-                                    
-                                    <h2 class="card-title">Knitted Belt</h2>
+                                        <p class="image-text">Multicolored knit belt for colder days in mind ☃️</p>
+                                    </a>
+                                </li>
 
-                                    <p class="image-text">Multicolored knit belt for colder days in mind ☃️</p>
-                                </a>
-                            </li>
+                                <li class="card-item swiper-slide">
+                                    <a href="#" class="card-link">
+                                        <img src="images/devils-beanie (1).png" alt="Devil's Beanie" class="card-image">
+                                        
+                                        <p class="badge">Crochet</p>
+                                        
+                                        <h2 class="card-title">Devil's Beanie</h2>
 
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="images/devils-beanie (1).png" alt="Devil's Beanie" class="card-image">
-                                    
-                                    <p class="badge">Crochet</p>
-                                    
-                                    <h2 class="card-title">Devil's Beanie</h2>
+                                        <p class="image-text">Devil’s cute beanie</p>
+                                    </a>
+                                </li>
 
-                                    <p class="image-text">Devil’s cute beanie</p>
-                                </a>
-                            </li>
+                                <li class="card-item swiper-slide">
+                                    <a href="#" class="card-link">
+                                        <img src="images/indiana-poncho.jpg" alt="Indiana Poncho" class="card-image">
+                                        
+                                        <p class="badge">Knitting</p>
+                                        
+                                        <h2 class="card-title">Indiana Poncho</h2>
 
-                            <li class="card-item swiper-slide">
-                                <a href="#" class="card-link">
-                                    <img src="images/indiana-poncho.jpg" alt="Indiana Poncho" class="card-image">
-                                    
-                                    <p class="badge">Knitting</p>
-                                    
-                                    <h2 class="card-title">Indiana Poncho</h2>
+                                        <p class="image-text">Indiana Jolie’s poncho for life 🤠</p>
+                                    </a>
+                                </li>
 
-                                    <p class="image-text">Indiana Jolie’s poncho for life 🤠</p>
-                                </a>
-                            </li>
+                            </ul>
 
-                        </ul>
+                            <div class="swiper-pagination"></div>
 
-                        <div class="swiper-pagination"></div>
-
+                        </div>
                     </div>
-                </div>
 
+                </div>
+                
             </div>
 
             <div id="shop" data-tab-content class="<?= isActive($activeTab, '#shop') ?>">
@@ -234,7 +238,7 @@ function isActiveForm($forName, $activeForm) {
                     </div>
                     
 
-                    <aside class="shopping-cart">
+                    <div class="shopping-cart">
                         <img src="images\shopping-cart-svgrepo-com.svg" alt="Shopping Cart Icon" class="shopping-cart-button">
                         <h2>Your Shopping List</h2>
 
@@ -248,30 +252,53 @@ function isActiveForm($forName, $activeForm) {
                             <p>Total: <span id="total-currency">0.00</span> DKK</p>
                             <button class="checkout-button">Ready for checkout?</button>
                         </div>
-                    </aside>
+                    </div>
                     
                 </div>
             </div>
 
             <div id="aboutMe" data-tab-content class="<?= isActive($activeTab, '#aboutMe') ?>">
                 <h2>About Me</h2>
-                <p>Learn more about me as a person and why I wanted this website.</p>
 
-                <p>
-                    I’ve always had a creative mind and felt restless with my hands. 
-                    In 2022 I started crocheting as I felt inspired by the snood from the Netflix series Wednesday. 
-                    The snood then became my first project and since I’ve just been practising and making all kinds of stuff. 
-                    Last year, 2025, I then began my knitting journey. 
-                    I wanted to make sweaters with greater patterns and try to make sense with two needles at the same time - and I succeeded! 
-                    Now I’m having a blast making things for both myself and others, and exploring and experimenting with lots of different techniques. 
-                    My “why” behind every piece is just coming from my enjoyment of making something myself and the process in doing that. ❤️
-                </p>
+                <div class="aboutMe-layout">
+                    <div class="aboutMe-content">
+                        <p>Learn more about me as a person and why I wanted this website.</p>
+
+                        <div class="aboutMe-text">
+                            <p><span class="aboutMe-introText">I’ve always had a creative mind and felt restless with my hands.</span></p>
+                            <p>
+                                In <span>2022</span> I started crocheting as I felt inspired by the snood from the Netflix series Wednesday. 
+                                The snood then became my first project and since I’ve just been practising and making all kinds of stuff.
+                            </p>
+                            <p>
+                                Last year, <span>2025</span>, I then began my knitting journey.
+                                I wanted to make sweaters with greater patterns and try to make sense with two needles at the same time - and I succeeded!
+                            </p>
+                            <p>
+                                Now I’m having a blast making things for both myself and others, and exploring and experimenting with lots of different techniques.
+                                My <span>“why”</span> behind every piece is just coming from my enjoyment of making something myself and the process in doing that. ❤️
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
 
-            <php>
-                <div id="signIn-login" data-tab-content class="<?= isActive($activeTab, '#signIn-login') ?>">
-                    <div class="containerForm">
+            <div id="signIn-login" data-tab-content class="<?= isActive($activeTab, '#signIn-login') ?>">
+                <div class="containerForm">
 
+                    <?php if (isset($_SESSION['email'])): ?>
+                        <div class="user-profile">
+                            <h2>Your Profile</h2>
+                            <p><strong>Name:</strong> <?= htmlspecialchars($_SESSION['name']) ?></p>
+                            <p><strong>Email address:</strong> <?= htmlspecialchars($_SESSION['email']) ?></p>
+
+                            <form action="logout.php" methods="post">
+                                <button type="submit" name="logout" class="logout-button">Log Out</button>
+                            </form>
+                        </div>
+
+                    <?php else: ?>
                         <div class="form-box <?= isActiveForm('signIn', $activeForm); ?>" id="signIn-form">
                             <form action="signIn-login.php" method="post">
                                 <h2>Sign In</h2>
@@ -293,17 +320,17 @@ function isActiveForm($forName, $activeForm) {
 
                                 <?= showMessage($errors['loginError'], 'error'); ?>
                                 <?= showMessage($successMessages['loginSuccess'], 'success'); ?>
-                                
+                                    
                                 <input type="email" name="email" placeholder="Email" required>
                                 <input type="password" name="password" placeholder="Password" required>
                                 <button type="submit" name="login">Login</button>
                                 <p>You don't have an account? <a href="#" onclick="showForm('signIn-form')">Sign In</a></p>
                             </form>
                         </div>
+                    <?php endif; ?>
 
-                    </div>
                 </div>
-            </php>
+            </div>
             
         </div>
     </div>
