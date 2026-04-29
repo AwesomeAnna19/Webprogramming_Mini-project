@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="shopping-cart-itemName">${totalItemsCountText}${item.itemName}</span>
                 <span>
                     ${(item.itemPrice * item.quantity).toFixed(2)} DKK
-                    <button class="remove-item-button" data-name="${item.itemName}">Remove Item</button>
+                    <button class="remove-item-button" data-name="${item.itemName}">Remove</button>
                 </span>
                 `;
 

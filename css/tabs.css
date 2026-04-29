@@ -1,6 +1,10 @@
 /* This here is for the tabs, from this video here: https://youtu.be/5L6h_MrNvsk?si=-IscZ1Q4G3Sr1wjp */
 /* This here is also for the sidebar, from this video here: https://youtu.be/6O15034hNyo */
 
+* {
+    box-sizing: border-box;
+}
+
 [data-tab-content] {
     display: none;
 }

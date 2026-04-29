@@ -12,10 +12,6 @@ const swiper = new Swiper('.card-wrapper', {
     dynamicBullets: true,
   },
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-
   breakpoints: {
     0: {
       slidesPerView: 1,
